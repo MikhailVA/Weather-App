@@ -1,0 +1,27 @@
+.forecast-container{
+  height: 350px;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background:transparent; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #7b1fa2; 
+}
+
+table {
+  width: 100%;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 480px) {
+td {
+  font-size: 11px;
+}
+}

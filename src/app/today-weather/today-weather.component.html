@@ -1,0 +1,72 @@
+<div class="container-today" *ngIf="weatherToday">
+
+<div class="upper-info">
+  <div class="location">
+    <div class="city">{{weatherToday.city.name}},
+      <span class="country">{{weatherToday.city.country}}</span>
+    </div>
+    <div class="current-temp">{{weatherToday.list[0].main.temp | number: '1.0-0'}}°C</div>
+    <div class="feels-like">
+      Feels like: {{weatherToday.list[0].main.feels_like | number: '1.0-0'}}°C
+    </div>
+  </div>
+  
+  
+  <div class="cloud-weather">
+    <img 
+    class="cloud-image"
+    src="http://openweathermap.org/img/wn/{{weatherToday.list[0].weather[0].icon}}@2x.png" 
+    alt="clouds-icon">
+    <div>{{weatherToday.list[0].weather[0].description | uppercase}}</div>
+  </div>
+</div>
+  
+  <div class="basic-info">
+    <div>
+      <div class="info-column">
+        <div>Temp min:</div>
+        <div>{{weatherToday.list[0].main.temp_min | number: '1.0-0'}}°C</div>
+      </div>
+      <div class="info-column">
+        <div>Temp max:</div>
+        <div>{{weatherToday.list[0].main.temp_max | number: '1.0-0'}}°C</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="info-column">
+        <div>Wind:</div>
+        <div>{{weatherToday.list[0].wind.speed}}m/s</div>
+      </div>
+      <div class="info-column">
+        <div>Humidity:</div>
+        <div>{{weatherToday.list[0].main.humidity}}%</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="info-column">
+        <div>Visibilty:</div>
+        <div>{{weatherToday.list[0].visibility/1000}}km</div>
+      </div>
+      <div class="info-column">
+        <div>Pressure:</div>
+        <div>{{weatherToday.list[0].main.pressure}}hPa</div>
+      </div>
+    </div>
+
+    <div class="sun">
+      <div class="info-column">
+        <div>Sunrise:</div>
+        <div>{{(weatherToday.city.sunrise - 7200) * 1000 | date:'shortTime'}}</div>
+      </div>
+      <div class="info-column">
+        <div>Sunset:</div>
+        <div>{{weatherToday.city.sunset* 1000 | date:'shortTime'}}</div>
+      </div>
+    </div>
+
+  </div>
+
+  
+</div>
